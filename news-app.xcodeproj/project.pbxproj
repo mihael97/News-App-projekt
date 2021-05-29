@@ -13,6 +13,7 @@
 		52D3F73C2656EF6200E80B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D3F73B2656EF6200E80B5D /* Assets.xcassets */; };
 		52D3F73F2656EF6200E80B5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D3F73D2656EF6200E80B5D /* LaunchScreen.storyboard */; };
 		52D3F7482656F0B600E80B5D /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3F7472656F0B600E80B5D /* InitialController.swift */; };
+		EFF62B5A26623FE40054D425 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF62B5926623FE40054D425 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		52D3F73E2656EF6200E80B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D3F7402656EF6200E80B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D3F7472656F0B600E80B5D /* InitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialController.swift; sourceTree = "<group>"; };
+		EFF62B5926623FE40054D425 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				52D3F7472656F0B600E80B5D /* InitialController.swift */,
+				EFF62B5926623FE40054D425 /* WeatherView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF62B5A26623FE40054D425 /* WeatherView.swift in Sources */,
 				52D3F7482656F0B600E80B5D /* InitialController.swift in Sources */,
 				52D3F7302656EF6100E80B5D /* AppDelegate.swift in Sources */,
 				52D3F73A2656EF6100E80B5D /* news_app.xcdatamodeld in Sources */,
