@@ -14,6 +14,10 @@
 		52D3F73F2656EF6200E80B5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D3F73D2656EF6200E80B5D /* LaunchScreen.storyboard */; };
 		52D3F7482656F0B600E80B5D /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3F7472656F0B600E80B5D /* InitialController.swift */; };
 		EFF62B5A26623FE40054D425 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF62B5926623FE40054D425 /* WeatherView.swift */; };
+		EFF62B5C26638C060054D425 /* feedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF62B5B26638C050054D425 /* feedTableView.swift */; };
+		EFF62B5E26638C560054D425 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF62B5D26638C560054D425 /* FeedTableViewController.swift */; };
+		EFF62B60266399F70054D425 /* NewsStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF62B5F266399F70054D425 /* NewsStoryViewController.swift */; };
+		EFF62B6226639AAB0054D425 /* NewsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF62B6126639AAB0054D425 /* NewsCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		52D3F7402656EF6200E80B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D3F7472656F0B600E80B5D /* InitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialController.swift; sourceTree = "<group>"; };
 		EFF62B5926623FE40054D425 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		EFF62B5B26638C050054D425 /* feedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedTableView.swift; sourceTree = "<group>"; };
+		EFF62B5D26638C560054D425 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		EFF62B5F266399F70054D425 /* NewsStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryViewController.swift; sourceTree = "<group>"; };
+		EFF62B6126639AAB0054D425 /* NewsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				52D3F7472656F0B600E80B5D /* InitialController.swift */,
+				EFF62B6126639AAB0054D425 /* NewsCustomCell.swift */,
+				EFF62B5F266399F70054D425 /* NewsStoryViewController.swift */,
+				EFF62B5D26638C560054D425 /* FeedTableViewController.swift */,
+				EFF62B5B26638C050054D425 /* feedTableView.swift */,
 				EFF62B5926623FE40054D425 /* WeatherView.swift */,
 			);
 			path = view;
@@ -167,8 +179,12 @@
 				EFF62B5A26623FE40054D425 /* WeatherView.swift in Sources */,
 				52D3F7482656F0B600E80B5D /* InitialController.swift in Sources */,
 				52D3F7302656EF6100E80B5D /* AppDelegate.swift in Sources */,
+				EFF62B5E26638C560054D425 /* FeedTableViewController.swift in Sources */,
+				EFF62B5C26638C060054D425 /* feedTableView.swift in Sources */,
+				EFF62B60266399F70054D425 /* NewsStoryViewController.swift in Sources */,
 				52D3F73A2656EF6100E80B5D /* news_app.xcdatamodeld in Sources */,
 				52D3F7322656EF6100E80B5D /* SceneDelegate.swift in Sources */,
+				EFF62B6226639AAB0054D425 /* NewsCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

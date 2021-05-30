@@ -70,15 +70,13 @@ class WeatherView: UIView {
             locationLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
             locationLabel.heightAnchor.constraint(equalToConstant: 22),
             
-            temperatureLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 20),
+            temperatureLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 10),
             temperatureLabel.leadingAnchor.constraint(equalTo: locationLabel.leadingAnchor),
             temperatureLabel.trailingAnchor.constraint(equalTo: locationLabel.trailingAnchor),
             temperatureLabel.heightAnchor.constraint(equalToConstant: 22),
             
             chanceOfRainLabel.topAnchor.constraint(equalTo: weatherImage.bottomAnchor, constant: 20),
             chanceOfRainLabel.centerXAnchor.constraint(equalTo: weatherImage.centerXAnchor),
-//            chanceOfRainLabel.leadingAnchor.constraint(equalTo: weatherImage.leadingAnchor),
-//            chanceOfRainLabel.trailingAnchor.constraint(equalTo: weatherImage.trailingAnchor),
             chanceOfRainLabel.heightAnchor.constraint(equalToConstant: 22),
         ])
     }
