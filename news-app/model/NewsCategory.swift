@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NewsCategory: String {
+enum NewsCategory: String, Codable, CaseIterable {
     case business
     case entertainment
     case general

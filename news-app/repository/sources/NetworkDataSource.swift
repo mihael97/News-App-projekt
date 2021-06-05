@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkDatasource {
+class NetworkDataSource {
     private let API_KEY: String = "554ca39e01544178924e8f5a5579fe03";
     private let BASE_URL: String = "newsapi.org"
     private let DATE_FORMATTER: DateFormatter
