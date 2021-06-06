@@ -11,8 +11,13 @@ import Foundation
 class NewsRepository {
     private let networkDatasource: NetworkDataSource = NetworkDataSource()
     private let coredataDatasource: CoreDataSource =  CoreDataSource()
+    private let numberOfArticles: Int = 30
     
-    public func getLatest(searchText: String?, category: NewsCategory?, complete: @escaping([Article])->Void) {
+    public func getLatest(searchText: String?, category: NewsCategory?, pageSize: Int? = nil, complete: @escaping([Article])->Void) {
+        if let category = category {
+            coredataDatasource.incrementSearchByCategory(category: category)
+        }
+        
         networkDatasource.fetchTopHeadline(searchText: searchText, category: category, completation: {
             result in
             switch result {
@@ -55,5 +60,25 @@ class NewsRepository {
         }
         group.wait()
         complete(sorted)
+    }
+    
+    public func getRecommendations()-> [Article] {
+        let recommendations = coredataDatasource.getRecommendations()
+        let sumOfItems: Int = recommendations.map {$0.value}.reduce(0, +)
+        var articles: [Article] = []
+        let group: DispatchGroup = DispatchGroup()
+        
+        recommendations.forEach {recommendation in
+            group.enter()
+            let numberOfItems: Double = Double(recommendation.value)/Double(sumOfItems)
+            getLatest(searchText: nil, category: recommendation.key, pageSize: Int(numberOfItems.rounded(.up)), complete: {
+                result in
+                    articles.append(contentsOf: result)
+                    group.leave()
+            })
+        }
+        group.wait()
+        
+        return articles
     }
 }

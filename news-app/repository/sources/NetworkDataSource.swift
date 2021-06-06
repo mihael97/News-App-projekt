@@ -35,7 +35,7 @@ class NetworkDataSource {
         return component
     }
     
-    private func getParams(searchText: String?, category: NewsCategory?=nil, language: String = "en")-> [String: String]{
+    private func getParams(searchText: String?, pageSize: Int? = nil, category: NewsCategory?=nil, language: String = "en")-> [String: String]{
         var params = [String:String]()
         if let searchText = searchText {
             params["q"] = searchText
@@ -44,6 +44,9 @@ class NetworkDataSource {
         }
         if let category = category {
             params["category"] = category.rawValue
+        }
+        if let pageSize = pageSize {
+            params["pageSize"] = "\(pageSize)"
         }
         params["language"] = language
         params["from"] = DATE_FORMATTER.string(from: Date())
@@ -92,9 +95,9 @@ class NetworkDataSource {
         }.resume()
     }
     
-    public func fetchTopHeadline(searchText: String?, category: NewsCategory?, completation: @escaping(Result<NewsResponse, RequestError>)->Void) {
+    public func fetchTopHeadline(searchText: String?, category: NewsCategory?, pageSize: Int?=nil, completation: @escaping(Result<NewsResponse, RequestError>)->Void) {
         let session = URLSession(configuration: URLSessionConfiguration.default)
-        let component = createComponent(path: "/v2/top-headlines", params: getParams(searchText: searchText, category: category))
+        let component = createComponent(path: "/v2/top-headlines", params: getParams(searchText: searchText, pageSize: pageSize, category: category))
         
         guard let url = component.url else {
             completation(.failure(.clientError))

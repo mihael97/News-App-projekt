@@ -9,7 +9,7 @@
 import Foundation
 
 class CoreDataSource {
-    public func getHistoryArticles()->[Article] {
+    public func getHistoryArticles()-> [Article] {
         return []
     }
     
@@ -17,11 +17,19 @@ class CoreDataSource {
         
     }
     
-    public func getSavedArticles()->[Article] {
+    public func getSavedArticles()-> [Article] {
         return []
     }
     
     public func saveArticle(article: Article) {
         
+    }
+    
+    public func incrementSearchByCategory(category: NewsCategory) {
+        
+    }
+    
+    public func getRecommendations()-> [NewsCategory:Int] {
+        return [:]
     }
 }
