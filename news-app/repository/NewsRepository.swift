@@ -18,24 +18,22 @@ class NewsRepository {
             switch result {
                 case .success(let data):
                     complete(data.articles)
-                case .failure(let error):
-                    print(error)
+                case .failure( _):
                     complete([])
             }
         })
     }
     
-    public func getHistory(complete: @escaping([Article])->Void) {
-        let history = coredataDatasource.getHistoryArticles()
-        complete(history)
+    public func getHistory()-> [Article] {
+        return coredataDatasource.getHistoryArticles()
     }
     
     public func saveToHistory(article: Article) {
         coredataDatasource.addToHistory(article: article)
     }
     
-    public func getSavedArticles(complete: @escaping([Article])->Void) {
-        complete(coredataDatasource.getSavedArticles())
+    public func getSavedArticles()-> [Article] {
+        return coredataDatasource.getSavedArticles()
     }
     
     public func saveArticle(article: Article) {
