@@ -40,20 +40,20 @@ class NewsRepository {
         coredataDatasource.saveArticle(article: article)
     }
     
-    public func getByCategory()->[NewsCategory:[Article]] {
+    public func getByCategory(complete: @escaping([NewsCategory:[Article]])->Void) {
         var sorted: [NewsCategory:[Article]] = [:]
         let group: DispatchGroup = DispatchGroup()
         
         NewsCategory.allCases.forEach {
             let value:NewsCategory = $0
             group.enter()
-            getLatest(searchText: nil, category: $0, complete: {
+            getLatest(searchText: nil, category: value, complete: {
                 result in
                     sorted[value] = result
                     group.leave()
             })
         }
         group.wait()
-        return sorted
+        complete(sorted)
     }
 }
