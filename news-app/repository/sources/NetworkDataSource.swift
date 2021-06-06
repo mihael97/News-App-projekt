@@ -35,7 +35,7 @@ class NetworkDataSource {
         return component
     }
     
-    private func getParams(searchText: String?, category: NewsCategory?=nil)-> [String: String]{
+    private func getParams(searchText: String?, category: NewsCategory?=nil, language: String = "en")-> [String: String]{
         var params = [String:String]()
         if let searchText = searchText {
             params["q"] = searchText
@@ -45,6 +45,7 @@ class NetworkDataSource {
         if let category = category {
             params["category"] = category.rawValue
         }
+        params["language"] = language
         params["from"] = DATE_FORMATTER.string(from: Date())
         params["apiKey"] = API_KEY
     
