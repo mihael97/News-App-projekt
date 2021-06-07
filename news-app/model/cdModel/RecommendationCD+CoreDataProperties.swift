@@ -17,7 +17,7 @@ extension RecommendationCD {
         return NSFetchRequest<RecommendationCD>(entityName: "RecommendationCD")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var count: Int32
+    @NSManaged public var name: String?
 
 }
