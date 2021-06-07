@@ -13,12 +13,14 @@ class NewsRepository {
     private let coredataDatasource: CoreDataSource =  CoreDataSource()
     private let numberOfArticles: Int = 30
     
-    public func getLatest(searchText: String?, category: NewsCategory?, pageSize: Int? = nil, complete: @escaping([Article])->Void) {
-        if let category = category {
-            coredataDatasource.incrementSearchByCategory(category: category)
+    public func getLatest(searchText: String?, category: NewsCategory?, pageSize: Int? = nil, statistic: Bool = true,  complete: @escaping([Article])->Void) {
+        if statistic {
+            if let category = category {
+                coredataDatasource.incrementSearchByCategory(category: category)
+            }
         }
         
-        networkDatasource.fetchTopHeadline(searchText: searchText, category: category, completation: {
+        networkDatasource.fetchTopHeadline(searchText: searchText, category: category, pageSize: pageSize, completation: {
             result in
             switch result {
                 case .success(let data):
@@ -70,8 +72,8 @@ class NewsRepository {
         
         recommendations.forEach {recommendation in
             group.enter()
-            let numberOfItems: Double = Double(recommendation.value)/Double(sumOfItems)
-            getLatest(searchText: nil, category: recommendation.key, pageSize: Int(numberOfItems.rounded(.up)), complete: {
+            let numberOfItems: Double = Double(recommendation.value)/Double(sumOfItems)*Double(numberOfArticles)
+            getLatest(searchText: nil, category: recommendation.key, pageSize: Int(numberOfItems.rounded(.up)), statistic: false, complete: {
                 result in
                     articles.append(contentsOf: result)
                     group.leave()
