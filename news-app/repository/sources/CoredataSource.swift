@@ -11,6 +11,7 @@ import CoreData
 
 class CoreDataSource {
     private let coreDataStack: CoreDataStack = CoreDataStack()
+    
     public func getHistoryArticles()-> [Article] {
         let request: NSFetchRequest<ArticleCD> = ArticleCD.fetchRequest()
         let managedContect = coreDataStack.persistentContainer.viewContext
@@ -21,13 +22,13 @@ class CoreDataSource {
                 return article
             }
         } catch(let error) {
-            print(error)
+            print(error.localizedDescription)
         }
         
         return []
     }
     
-    private func getSource(source: Source)->SourceCD {
+    private func getSource(source: Source)->SourceCD? {
         let request: NSFetchRequest<SourceCD> = SourceCD.fetchRequest()
         let managedContext = coreDataStack.persistentContainer.viewContext
         
@@ -49,9 +50,9 @@ class CoreDataSource {
             
             return sourceCd
         } catch(let error) {
-            print(error)
+            print(error.localizedDescription)
         }
-        return SourceCD()
+        return nil
     }
     
     public func addToHistory(article: Article) {
@@ -67,7 +68,7 @@ class CoreDataSource {
             articleCD.title = article.title
             try managedContext.save()
         } catch(let error) {
-            print(error)
+            print(error.localizedDescription)
         }
     }
     
@@ -82,7 +83,7 @@ class CoreDataSource {
                 return article
             }
         } catch(let error) {
-            print(error)
+            print(error.localizedDescription)
         }
         
         return []
@@ -127,7 +128,7 @@ class CoreDataSource {
             }
             try managedContext.save()
         } catch(let error) {
-            print(error)
+            print(error.localizedDescription)
         }
     }
     
@@ -144,7 +145,7 @@ class CoreDataSource {
             }
             return map
         } catch(let error) {
-            print(error)
+            print(error.localizedDescription)
         }
         return [:]
     }
