@@ -11,4 +11,9 @@ import Foundation
 struct Source: Codable {
     let id: String?
     let name: String
+        
+    init(sourceCD: SourceCD) {
+        self.id = sourceCD.idCD
+        self.name = sourceCD.name!
+    }
 }
