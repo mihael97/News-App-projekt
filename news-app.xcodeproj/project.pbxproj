@@ -25,6 +25,9 @@
 		52BB8A56266BC1D700746D5A /* NewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB8A55266BC1D700746D5A /* NewsCategory.swift */; };
 		52BB8A58266BCBA100746D5A /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB8A57266BCBA100746D5A /* NewsRepository.swift */; };
 		52BB8A5B266BE8B000746D5A /* CoredataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB8A5A266BE8B000746D5A /* CoredataSource.swift */; };
+		52C43F8A268B754100FB25D0 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C43F89268B754100FB25D0 /* AppRouter.swift */; };
+		52C43F8C268B77B700FB25D0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C43F8B268B77B700FB25D0 /* TabBarController.swift */; };
+		52C43F8E268B77FC00FB25D0 /* AppRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C43F8D268B77FC00FB25D0 /* AppRouterProtocol.swift */; };
 		52D3F7302656EF6100E80B5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3F72F2656EF6100E80B5D /* AppDelegate.swift */; };
 		52D3F7322656EF6100E80B5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3F7312656EF6100E80B5D /* SceneDelegate.swift */; };
 		52D3F73C2656EF6200E80B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D3F73B2656EF6200E80B5D /* Assets.xcassets */; };
@@ -57,6 +60,9 @@
 		52BB8A55266BC1D700746D5A /* NewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategory.swift; sourceTree = "<group>"; };
 		52BB8A57266BCBA100746D5A /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 		52BB8A5A266BE8B000746D5A /* CoredataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataSource.swift; sourceTree = "<group>"; };
+		52C43F89268B754100FB25D0 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		52C43F8B268B77B700FB25D0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		52C43F8D268B77FC00FB25D0 /* AppRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouterProtocol.swift; sourceTree = "<group>"; };
 		52D3F72C2656EF6100E80B5D /* news-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "news-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D3F72F2656EF6100E80B5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D3F7312656EF6100E80B5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +129,15 @@
 			path = sources;
 			sourceTree = "<group>";
 		};
+		52C43F86268B751900FB25D0 /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				52C43F89268B754100FB25D0 /* AppRouter.swift */,
+				52C43F8D268B77FC00FB25D0 /* AppRouterProtocol.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
 		52D3F7232656EF6100E80B5D = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +188,7 @@
 				EFF62B5D26638C560054D425 /* FeedTableViewController.swift */,
 				EFF62B5B26638C050054D425 /* feedTableView.swift */,
 				EFF62B5926623FE40054D425 /* WeatherView.swift */,
+				52C43F8B268B77B700FB25D0 /* TabBarController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -180,6 +196,7 @@
 		52D3F74A2656F12D00E80B5D /* presenter */ = {
 			isa = PBXGroup;
 			children = (
+				52C43F86268B751900FB25D0 /* coordinator */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -266,6 +283,8 @@
 				5261510D266EB306001C2143 /* RecommendationCD+CoreDataClass.swift in Sources */,
 				52BB8A46266B93FA00746D5A /* Article.swift in Sources */,
 				5261510E266EB306001C2143 /* RecommendationCD+CoreDataProperties.swift in Sources */,
+				52C43F8E268B77FC00FB25D0 /* AppRouterProtocol.swift in Sources */,
+				52C43F8A268B754100FB25D0 /* AppRouter.swift in Sources */,
 				EFF62B5A26623FE40054D425 /* WeatherView.swift in Sources */,
 				52D3F7482656F0B600E80B5D /* InitialController.swift in Sources */,
 				52D3F7302656EF6100E80B5D /* AppDelegate.swift in Sources */,
@@ -284,6 +303,7 @@
 				52BB8A4A266B972600746D5A /* NewsResponse.swift in Sources */,
 				EFF62B60266399F70054D425 /* NewsStoryViewController.swift in Sources */,
 				52BB8A58266BCBA100746D5A /* NewsRepository.swift in Sources */,
+				52C43F8C268B77B700FB25D0 /* TabBarController.swift in Sources */,
 				52BB8A48266B941500746D5A /* Source.swift in Sources */,
 				52D3F7322656EF6100E80B5D /* SceneDelegate.swift in Sources */,
 				526150F2266E9F48001C2143 /* Model.xcdatamodeld in Sources */,

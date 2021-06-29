@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import UIKit
+
+class AppRouter {
+    private let navigationController: UINavigationController!
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    public func setScreen(window: UIWindow?) {
+        let controller = InitialController()
+        navigationController.pushViewController(controller, animated: true)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
+}
+
+extension AppRouter: AppRouterProtocol {
+    
+}
